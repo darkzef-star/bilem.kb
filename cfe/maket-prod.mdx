@@ -6,6 +6,8 @@ icon: "window-maximize"
 
 <Info>
   Это макет, а не работающий экран: цифры и данные выдуманные. Вкладки внутри макета кликабельные. Цель — общая картинка для Земли и Воздуха: к чему идём.
+
+  **Макет — ориентир, а не пиксель-в-пиксель.** Формы 1С (интерфейс «Такси») не умеют всё, что умеет HTML: скругления, цветные карточки, свободную сетку. Настоящая форма в расширении — источник правды по внешнему виду; от макета важны состав полей, вкладки и поведение из [ТЗ](/cfe/tz-forma-podklyucheniya).
 </Info>
 
 <iframe
@@ -90,216 +92,216 @@ code{font-family:Consolas,"Courier New",monospace;font-size:12px;background:#F5F
 </style></head><body>
 
 <div class="top">
-  <span class="logo1c">1С</span><span>☰</span>
-  <span>Бухгалтерия для Казахстана, редакция 3.0 &nbsp;(1С:Предприятие) — ТОО «ТД Лакомка»</span>
-  <span class="search">Поиск Ctrl+Shift+F</span>
+<span class="logo1c">1С</span><span>☰</span>
+<span>Бухгалтерия для Казахстана, редакция 3.0 &nbsp;(1С:Предприятие) — ТОО «ТД Лакомка»</span>
+<span class="search">Поиск Ctrl+Shift+F</span>
 </div>
 
 <div class="app">
-  <div class="sections">
-    <div class="sec"><span class="ico"></span>Главное</div>
-    <div class="sec"><span class="ico"></span>Руководителю</div>
-    <div class="sec"><span class="ico"></span>Операции</div>
-    <div class="sec"><span class="ico"></span>Банк и касса</div>
-    <div class="sec"><span class="ico"></span>Покупка</div>
-    <div class="sec"><span class="ico"></span>Продажа</div>
-    <div class="sec"><span class="ico"></span>Номенклатура и склад</div>
-    <div class="sec"><span class="ico"></span>Производство</div>
-    <div class="sec"><span class="ico"></span>ОС и НМА</div>
-    <div class="sec"><span class="ico"></span>Зарплата</div>
-    <div class="sec"><span class="ico"></span>Кадровый учет</div>
-    <div class="sec"><span class="ico"></span>Отчеты</div>
-    <div class="sec"><span class="ico"></span>Предприятие</div>
-    <div class="sec"><span class="ico"></span>Администрирование</div>
-    <div class="sec"><span style="width:16px;text-align:center">?</span>Помощь</div>
-    <div class="sec on">
-      <svg viewBox="0 0 16 16"><defs><mask id="m"><rect width="16" height="16" fill="#fff"/><rect x="4.6" y="4" width="6.8" height="1.25" rx=".6"/><rect x="4.6" y="6.25" width="6.8" height="1.25" rx=".6"/><rect x="7.35" y="6.25" width="1.3" height="4.65" rx=".6"/></mask></defs><g fill="#4D4D4D" mask="url(#m)"><ellipse cx="8" cy="6.95" rx="7" ry="5.65"/><polygon points="3.2,10.5 2.4,15 7,12.2"/></g></svg>
-      bilem.ai</div>
+<div class="sections">
+<div class="sec"><span class="ico"></span>Главное</div>
+<div class="sec"><span class="ico"></span>Руководителю</div>
+<div class="sec"><span class="ico"></span>Операции</div>
+<div class="sec"><span class="ico"></span>Банк и касса</div>
+<div class="sec"><span class="ico"></span>Покупка</div>
+<div class="sec"><span class="ico"></span>Продажа</div>
+<div class="sec"><span class="ico"></span>Номенклатура и склад</div>
+<div class="sec"><span class="ico"></span>Производство</div>
+<div class="sec"><span class="ico"></span>ОС и НМА</div>
+<div class="sec"><span class="ico"></span>Зарплата</div>
+<div class="sec"><span class="ico"></span>Кадровый учет</div>
+<div class="sec"><span class="ico"></span>Отчеты</div>
+<div class="sec"><span class="ico"></span>Предприятие</div>
+<div class="sec"><span class="ico"></span>Администрирование</div>
+<div class="sec"><span style="width:16px;text-align:center">?</span>Помощь</div>
+<div class="sec on">
+  <svg viewBox="0 0 16 16"><defs><mask id="m"><rect width="16" height="16" fill="#fff"/><rect x="4.6" y="4" width="6.8" height="1.25" rx=".6"/><rect x="4.6" y="6.25" width="6.8" height="1.25" rx=".6"/><rect x="7.35" y="6.25" width="1.3" height="4.65" rx=".6"/></mask></defs><g fill="#4D4D4D" mask="url(#m)"><ellipse cx="8" cy="6.95" rx="7" ry="5.65"/><polygon points="3.2,10.5 2.4,15 7,12.2"/></g></svg>
+  bilem.ai</div>
+</div>
+
+<div class="funcs">
+<h4>Bilem</h4>
+<a class="on" data-t="conn">Подключение</a>
+<a data-t="tools">Инструменты</a>
+<a data-t="mail">Почта</a>
+<a data-t="log">Журнал запросов</a>
+<a data-t="upd">Обновления</a>
+<h4>Документы Bilem</h4>
+<a>Счета, выписанные агентом</a>
+<a>Акты сверки</a>
+<a>Доверенности</a>
+<h4>Сервис</h4>
+<a>Права пользователя bilem</a>
+<a>Проверка связи</a>
+<a>Справка и поддержка</a>
+</div>
+
+<div class="main">
+<div class="formhead"><span class="star">☆</span><h1>Подключение Bilem</h1></div>
+<div class="bar">
+  <button class="btn def">Записать и закрыть</button>
+  <button class="btn">Записать</button>
+  <button class="btn">Проверить связь</button>
+  <span style="margin-left:auto;color:#888;font-size:12px">Ещё ▾</span>
+</div>
+<div class="tabs">
+  <div class="tab on" data-t="conn">Подключение</div>
+  <div class="tab" data-t="tools">Инструменты (42)</div>
+  <div class="tab" data-t="mail">Почта</div>
+  <div class="tab" data-t="log">Журнал</div>
+  <div class="tab" data-t="upd">Обновления</div>
+</div>
+
+{/*  ПОДКЛЮЧЕНИЕ  */}
+<div class="pane on" id="conn">
+  <div class="status">
+    <span class="dot"></span>
+    <div><div class="big">Подключено · агент отвечает из этой базы</div>
+    <div class="meta">Служба bilem-agent 1.4.2 · канал mcp.bilem.ai · последний запрос 12 сек назад · сегодня 138 ответов</div></div>
+    <div class="wm"><svg width="22" height="22" viewBox="0 0 64 64"><circle cx="32" cy="32" r="31" fill="#1FAF5A"/><path d="M32 11.5c-11.6 0-21 8-21 18 0 5.2 2.5 9.9 6.6 13.2L15 52.5l10.6-4.7c2 .5 4.2.7 6.4.7 11.6 0 21-8 21-18s-9.4-19-21-19z" fill="#fff"/><g stroke="#1FAF5A" stroke-width="4" stroke-linecap="round"><line x1="22" y1="21" x2="42" y2="21"/><line x1="22" y1="27.5" x2="42" y2="27.5"/><line x1="32" y1="27.5" x2="32" y2="41"/></g></svg>bilem<b>.ai</b></div>
   </div>
 
-  <div class="funcs">
-    <h4>Bilem</h4>
-    <a class="on" data-t="conn">Подключение</a>
-    <a data-t="tools">Инструменты</a>
-    <a data-t="mail">Почта</a>
-    <a data-t="log">Журнал запросов</a>
-    <a data-t="upd">Обновления</a>
-    <h4>Документы Bilem</h4>
-    <a>Счета, выписанные агентом</a>
-    <a>Акты сверки</a>
-    <a>Доверенности</a>
-    <h4>Сервис</h4>
-    <a>Права пользователя bilem</a>
-    <a>Проверка связи</a>
-    <a>Справка и поддержка</a>
-  </div>
-
-  <div class="main">
-    <div class="formhead"><span class="star">☆</span><h1>Подключение Bilem</h1></div>
-    <div class="bar">
-      <button class="btn def">Записать и закрыть</button>
-      <button class="btn">Записать</button>
-      <button class="btn">Проверить связь</button>
-      <span style="margin-left:auto;color:#888;font-size:12px">Ещё ▾</span>
+  <div class="grid">
+    <div class="grp">
+      <h3>Организация и тариф</h3>
+      <div class="row"><label>Организация:</label><div class="inp ro">ТОО «ТД Лакомка»</div></div>
+      <div class="row"><label>БИН:</label><div class="inp ro mono">170340012345</div></div>
+      <div class="row"><label>Кабинет:</label><div class="inp ro"><a style="color:#3B6FB6">lakomka.bilem.ai</a></div></div>
+      <div class="row"><label>Тариф:</label><div class="inp ro">Standard · до 14.11.2026</div><span class="pill g">активен</span></div>
+      <div class="row"><label>Канал:</label><div class="inp ro">WhatsApp +7 727 ··· 41 20 · 2 человека в белом списке</div></div>
     </div>
-    <div class="tabs">
-      <div class="tab on" data-t="conn">Подключение</div>
-      <div class="tab" data-t="tools">Инструменты (42)</div>
-      <div class="tab" data-t="mail">Почта</div>
-      <div class="tab" data-t="log">Журнал</div>
-      <div class="tab" data-t="upd">Обновления</div>
+    <div class="grp">
+      <h3>Пользователь 1С и права</h3>
+      <div class="row"><label>Пользователь:</label><div class="inp ro">bilem</div><span class="pill n">без «Полных прав»</span></div>
+      <div class="row"><label>Роли:</label><div><span class="chk on"></span>Bilem · Чтение &nbsp;&nbsp; <span class="chk on"></span>Bilem · Выписка</div></div>
+      <div class="row"><label>Лицензия 1С:</label><div class="inp ro">1 клиентская на время запроса (~20 сек)</div></div>
+      <div class="row"><label>Привилегированный режим:</label><span class="ok">не используется</span></div>
+      <div class="note g" style="margin-top:10px"><b>Bilem не влияет на учёт.</b> Не проводит документы и не создаёт платёжки — таких методов в расширении нет.</div>
     </div>
 
-    <!-- ПОДКЛЮЧЕНИЕ -->
-    <div class="pane on" id="conn">
-      <div class="status">
-        <span class="dot"></span>
-        <div><div class="big">Подключено · агент отвечает из этой базы</div>
-        <div class="meta">Служба bilem-agent 1.4.2 · канал mcp.bilem.ai · последний запрос 12 сек назад · сегодня 138 ответов</div></div>
-        <div class="wm"><svg width="22" height="22" viewBox="0 0 64 64"><circle cx="32" cy="32" r="31" fill="#1FAF5A"/><path d="M32 11.5c-11.6 0-21 8-21 18 0 5.2 2.5 9.9 6.6 13.2L15 52.5l10.6-4.7c2 .5 4.2.7 6.4.7 11.6 0 21-8 21-18s-9.4-19-21-19z" fill="#fff"/><g stroke="#1FAF5A" stroke-width="4" stroke-linecap="round"><line x1="22" y1="21" x2="42" y2="21"/><line x1="22" y1="27.5" x2="42" y2="27.5"/><line x1="32" y1="27.5" x2="32" y2="41"/></g></svg>bilem<b>.ai</b></div>
-      </div>
-
-      <div class="grid">
-        <div class="grp">
-          <h3>Организация и тариф</h3>
-          <div class="row"><label>Организация:</label><div class="inp ro">ТОО «ТД Лакомка»</div></div>
-          <div class="row"><label>БИН:</label><div class="inp ro mono">170340012345</div></div>
-          <div class="row"><label>Кабинет:</label><div class="inp ro"><a style="color:#3B6FB6">lakomka.bilem.ai</a></div></div>
-          <div class="row"><label>Тариф:</label><div class="inp ro">Standard · до 14.11.2026</div><span class="pill g">активен</span></div>
-          <div class="row"><label>Канал:</label><div class="inp ro">WhatsApp +7 727 ··· 41 20 · 2 человека в белом списке</div></div>
-        </div>
-        <div class="grp">
-          <h3>Пользователь 1С и права</h3>
-          <div class="row"><label>Пользователь:</label><div class="inp ro">bilem</div><span class="pill n">без «Полных прав»</span></div>
-          <div class="row"><label>Роли:</label><div><span class="chk on"></span>Bilem · Чтение &nbsp;&nbsp; <span class="chk on"></span>Bilem · Выписка</div></div>
-          <div class="row"><label>Лицензия 1С:</label><div class="inp ro">1 клиентская на время запроса (~20 сек)</div></div>
-          <div class="row"><label>Привилегированный режим:</label><span class="ok">не используется</span></div>
-          <div class="note g" style="margin-top:10px"><b>Bilem не влияет на учёт.</b> Не проводит документы и не создаёт платёжки — таких методов в расширении нет.</div>
-        </div>
-
-        <div class="grp" style="grid-column:1/-1">
-          <h3>MCP и API</h3>
-          <div class="row"><label>Токен:</label><div class="inp mono">••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••7Kq2</div><button class="btn sm">Показать</button><button class="btn sm">Скопировать</button><button class="btn sm">Сгенерировать новый…</button></div>
-          <div class="row"><label>Локальный MCP:</label><div class="inp mono ro">http://srv-1c/bp/hs/bilem/mcp/••••7Kq2</div><span class="pill n">без облака</span></div>
-          <div class="row"><label>Облачный MCP:</label><div class="inp mono ro">https://mcp.bilem.ai</div><span class="pill g">OAuth · ChatGPT, claude.ai</span></div>
-          <div class="row"><label>REST API:</label><div class="inp mono ro">http://srv-1c/bp/hs/bilem/  ·  GET /org  /tools  /balance  /debtors …</div></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:10px">
-            <div><div style="color:#666">Claude Code / Cursor</div><div class="snip"><span class="k">claude</span> mcp add bilem \\
-  https://srv-1c/bp/hs/bilem/mcp/••••</div></div>
-            <div><div style="color:#666">ChatGPT / claude.ai — коннектор</div><div class="snip">URL: <span class="s">https://mcp.bilem.ai</span>
+    <div class="grp" style="grid-column:1/-1">
+      <h3>MCP и API</h3>
+      <div class="row"><label>Токен:</label><div class="inp mono">••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••7Kq2</div><button class="btn sm">Показать</button><button class="btn sm">Скопировать</button><button class="btn sm">Сгенерировать новый…</button></div>
+      <div class="row"><label>Локальный MCP:</label><div class="inp mono ro">http://srv-1c/bp/hs/bilem/mcp/••••7Kq2</div><span class="pill n">без облака</span></div>
+      <div class="row"><label>Облачный MCP:</label><div class="inp mono ro">https://mcp.bilem.ai</div><span class="pill g">OAuth · ChatGPT, claude.ai</span></div>
+      <div class="row"><label>REST API:</label><div class="inp mono ro">http://srv-1c/bp/hs/bilem/  ·  GET /org  /tools  /balance  /debtors …</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:10px">
+        <div><div style="color:#666">Claude Code / Cursor</div><div class="snip"><span class="k">claude</span> mcp add bilem \\
+https://srv-1c/bp/hs/bilem/mcp/••••</div></div>
+        <div><div style="color:#666">ChatGPT / claude.ai — коннектор</div><div class="snip">URL: <span class="s">https://mcp.bilem.ai</span>
 Вход: учётная запись bilem.ai</div></div>
-            <div><div style="color:#666">Проверка</div><div class="snip"><span class="k">curl</span> -H <span class="s">"Authorization: Bearer …"</span> \\
-  http://srv-1c/bp/hs/bilem/org</div></div>
-          </div>
-        </div>
+        <div><div style="color:#666">Проверка</div><div class="snip"><span class="k">curl</span> -H <span class="s">"Authorization: Bearer …"</span> \\
+http://srv-1c/bp/hs/bilem/org</div></div>
       </div>
-    </div>
-
-    <!-- ИНСТРУМЕНТЫ -->
-    <div class="pane" id="tools">
-      <div class="stat"><div><span>Доступно в этой версии</span><b>42</b></div><div><span>Включено</span><b>39</b></div><div><span>Вызовов за 30 дней</span><b>4 812</b></div><div><span>Ошибок за 30 дней</span><b>7</b></div></div>
-      <table>
-        <tr><th></th><th>Инструмент</th><th>Что делает</th><th>Раздел</th><th>Нужна роль</th><th>Вызовов, 30 дн</th><th>Ср. время</th></tr>
-        <tr><td><span class="sw on"></span></td><td><code>balance</code></td><td>Деньги на дату: счета, кассы, валюты</td><td>Деньги</td><td>Чтение</td><td class="num">1 204</td><td class="num">0,4 с</td></tr>
-        <tr><td><span class="sw on"></span></td><td><code>debtors</code></td><td>Дебиторка по контрагентам с просрочкой</td><td>Расчёты</td><td>Чтение</td><td class="num">887</td><td class="num">0,9 с</td></tr>
-        <tr><td><span class="sw on"></span></td><td><code>sales</code></td><td>Выручка по периодам</td><td>Продажи</td><td>Чтение</td><td class="num">612</td><td class="num">0,7 с</td></tr>
-        <tr><td><span class="sw on"></span></td><td><code>taxes_due</code></td><td>Налоги к уплате и ближайшие сроки</td><td>Налоги</td><td>Чтение</td><td class="num">341</td><td class="num">1,1 с</td></tr>
-        <tr><td><span class="sw on"></span></td><td><code>counterparty_balance</code></td><td>Сальдо и обороты с контрагентом</td><td>Расчёты</td><td>Чтение</td><td class="num">298</td><td class="num">0,8 с</td></tr>
-        <tr><td><span class="sw on"></span></td><td><code>invoice_create</code></td><td>Счёт на оплату → PDF (без проведения)</td><td>Выписка</td><td>Выписка</td><td class="num">156</td><td class="num">2,3 с</td></tr>
-        <tr><td><span class="sw on"></span></td><td><code>reconciliation_create</code></td><td>Акт сверки за период → PDF</td><td>Выписка</td><td>Выписка</td><td class="num">94</td><td class="num">3,1 с</td></tr>
-        <tr><td><span class="sw on"></span></td><td><code>send_email</code></td><td>Письмо клиенту через почту 1С</td><td>Сервис</td><td>Выписка</td><td class="num">121</td><td class="num">1,8 с</td></tr>
-        <tr><td><span class="sw on"></span></td><td><code>stock</code></td><td>Остатки ТМЗ по складам</td><td>Склад</td><td>Чтение</td><td class="num">203</td><td class="num">0,6 с</td></tr>
-        <tr><td><span class="sw"></span></td><td><code>payroll_total</code></td><td>ФОТ за месяц без ФИО</td><td>Зарплата</td><td>Чтение</td><td class="num">—</td><td class="num">—</td></tr>
-        <tr><td><span class="sw"></span></td><td><code>headcount</code></td><td>Численность сотрудников</td><td>Кадры</td><td>Чтение</td><td class="num">—</td><td class="num">—</td></tr>
-        <tr><td colspan="7" style="color:#888;text-align:center">… ещё 31 инструмент · каталог строится из <code>GET /tools</code> установленной версии</td></tr>
-      </table>
-      <div class="note">Проведение, платёжки, ПКО/РКО, закрытие месяца — в каталоге отсутствуют. На такой запрос агент отвечает: «Это делает бухгалтер в 1С».</div>
-    </div>
-
-    <!-- ПОЧТА -->
-    <div class="pane" id="mail">
-      <div class="grid">
-        <div class="grp">
-          <h3>Учётная запись для писем клиентам</h3>
-          <div class="row"><label>Учётная запись 1С:</label><div class="inp">Бухгалтерия ТД Лакомка</div><button class="btn sm">…</button></div>
-          <div class="row"><label>Адрес отправителя:</label><div class="inp mono">buh@lakomka.kz</div></div>
-          <div class="row"><label>SMTP-сервер:</label><div class="inp mono">smtp.mail.kz</div><div class="inp mono" style="flex:0 0 60px">465</div><span class="pill g">SSL</span></div>
-          <div class="row"><label>Пароль:</label><div class="inp mono">••••••••••••</div><span class="pill n">хранится в 1С</span></div>
-          <div class="row"><label>Копия бухгалтеру:</label><div class="inp mono">glavbuh@lakomka.kz</div></div>
-          <div class="row"><label></label><button class="btn">Отправить тестовое письмо</button><span class="ok">✓ доставлено 11.10 14:02</span></div>
-          <div class="note g">Письма отправляет 1С, не облако. Пароль SMTP никогда не покидает базу.</div>
-        </div>
-        <div class="grp">
-          <h3>Шаблон письма</h3>
-          <div class="row"><label>Тема:</label><div class="inp">[Номер документа] от ТОО «ТД Лакомка»</div></div>
-          <div class="inp" style="height:120px;white-space:normal;padding:8px;line-height:1.5">Здравствуйте!<br>Направляем [Документ] № [Номер] от [Дата] на сумму [Сумма] ₸.<br><br>С уважением,<br>ТОО «ТД Лакомка»<br><span style="color:#999">Отправлено через Bilem</span></div>
-          <div class="row" style="margin-top:10px"><label>Подтверждать отправку:</label><span class="sw on"></span>&nbsp; директор подтверждает в чате</div>
-          <div class="row"><label>Логотип в PDF:</label><span class="chk on"></span>из реквизитов организации</div>
-        </div>
-      </div>
-      <h3 style="font-size:13px;color:#555;margin:18px 0 8px">Последние отправки</h3>
-      <table>
-        <tr><th>Дата</th><th>Кому</th><th>Документ</th><th>Сумма</th><th>Инициатор</th><th>Статус</th></tr>
-        <tr><td>11.10.2026 14:18</td><td>info@alem-trade.kz</td><td>Счёт на оплату № 149</td><td class="num">450 000,00</td><td>Директор (WhatsApp)</td><td><span class="pill g">доставлено</span></td></tr>
-        <tr><td>11.10.2026 11:02</td><td>buh@nur-kurylys.kz</td><td>Акт сверки 01.07–30.09</td><td class="num">—</td><td>Директор (WhatsApp)</td><td><span class="pill g">доставлено</span></td></tr>
-        <tr><td>10.10.2026 17:40</td><td>office@stroymarket.kz</td><td>Счёт на оплату № 148</td><td class="num">1 280 500,00</td><td>Менеджер (Telegram)</td><td><span class="pill y">ждёт подтверждения</span></td></tr>
-        <tr><td>10.10.2026 09:15</td><td>zakup@astana-build.kz</td><td>Счёт на оплату № 147</td><td class="num">96 400,00</td><td>Директор (WhatsApp)</td><td><span class="pill r">SMTP: ящик переполнен</span></td></tr>
-      </table>
-    </div>
-
-    <!-- ЖУРНАЛ -->
-    <div class="pane" id="log">
-      <div class="bar" style="padding:0 0 10px;border:0"><span>Период:</span><div class="inp" style="flex:0 0 200px">11.10.2026 — 11.10.2026</div><span>Кто:</span><div class="inp" style="flex:0 0 160px">Все</div><span>Только ошибки</span><span class="sw"></span></div>
-      <table>
-        <tr><th>Время</th><th>Кто спросил</th><th>Канал</th><th>Вопрос</th><th>Инструмент</th><th>Время ответа</th><th>Результат</th></tr>
-        <tr><td>14:31:07</td><td>Ержан (директор)</td><td>WhatsApp</td><td>сколько у нас денег на сегодня</td><td><code>balance</code></td><td class="num">0,4 с</td><td><span class="pill g">200</span></td></tr>
-        <tr><td>14:18:22</td><td>Ержан (директор)</td><td>WhatsApp</td><td>выстави счёт Алем Трейд на 450 тыс за услуги</td><td><code>invoice_create</code></td><td class="num">2,2 с</td><td><span class="pill g">201 · № 149</span></td></tr>
-        <tr><td>14:18:25</td><td>Ержан (директор)</td><td>WhatsApp</td><td>отправь им на почту</td><td><code>send_email</code></td><td class="num">1,7 с</td><td><span class="pill g">отправлено</span></td></tr>
-        <tr><td>13:55:40</td><td>Айгуль (бухгалтер)</td><td>ChatGPT</td><td>кто должен больше 30 дней</td><td><code>debtors</code></td><td class="num">0,9 с</td><td><span class="pill g">200</span></td></tr>
-        <tr><td>12:10:03</td><td>Ержан (директор)</td><td>WhatsApp</td><td>проведи реализацию Алем Трейд</td><td>—</td><td class="num">—</td><td><span class="pill y">403 · не в границах Bilem</span></td></tr>
-        <tr><td>11:02:18</td><td>Ержан (директор)</td><td>WhatsApp</td><td>акт сверки с Нур-Курылыс за квартал</td><td><code>reconciliation_create</code></td><td class="num">3,0 с</td><td><span class="pill g">201</span></td></tr>
-        <tr><td>09:00:00</td><td>Утренняя сводка</td><td>WhatsApp</td><td>три вещи на сегодня</td><td><code>balance, debtors, taxes_due</code></td><td class="num">1,9 с</td><td><span class="pill g">200</span></td></tr>
-      </table>
-      <div class="note" style="margin-top:12px">Журнал хранит только факт вызова и результат. Тексты переписки и данные 1С в облаке не сохраняются.</div>
-    </div>
-
-    <!-- ОБНОВЛЕНИЯ -->
-    <div class="pane" id="upd">
-      <div class="grid">
-        <div class="grp">
-          <h3>Версия расширения</h3>
-          <div class="row"><label>Установлена:</label><div class="inp ro mono">bilem 0.9.3 · 28.09.2026</div></div>
-          <div class="row"><label>Доступна:</label><div class="inp ro mono">bilem 0.10.0 · 10.10.2026</div><span class="pill y">новая</span></div>
-          <div class="row"><label>Источник:</label><div class="inp ro mono">github.com/skp-kz/bilem.cfe · releases</div></div>
-          <div class="row"><label>Обновлять автоматически:</label><span class="sw on"></span>&nbsp; при входе администратора, с подтверждением</div>
-          <div class="row"><label></label><button class="btn def">Обновить до 0.10.0</button><button class="btn">Что нового</button></div>
-        </div>
-        <div class="grp">
-          <h3>Что нового в 0.10.0</h3>
-          <ul class="chlog" style="margin:0;padding-left:18px">
-            <li>Новые инструменты: <code>esf_status</code>, <code>vat_summary</code></li>
-            <li>Акт сверки: печать с логотипом организации</li>
-            <li><code>debtors</code>: фильтр по договору и валюте</li>
-            <li>Совместимость с БП для КЗ 3.0.55</li>
-            <li>Исправлено: таймаут <code>send_email</code> при больших вложениях</li>
-          </ul>
-          <div class="note g" style="margin-top:12px">Обновление не меняет данные учёта и не требует монопольного режима.</div>
-        </div>
-        <div class="grp" style="grid-column:1/-1">
-          <h3>Служба bilem-agent</h3>
-          <div class="row"><label>Состояние:</label><span class="ok">● работает</span>&nbsp;&nbsp;версия 1.4.2 · сервер SRV-1C · подписана ТОО «СКП»</div>
-          <div class="row"><label>Канал:</label><div class="inp ro mono">исходящий TLS → mcp.bilem.ai · входящих портов нет</div></div>
-          <div class="row"><label>Код привязки:</label><div class="inp ro mono">LKM-4821-QZ</div><span class="pill g">привязано к кабинету lakomka</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="foot">
-      <span>Техническая поддержка по продукту предоставляется только при коммерческом использовании.</span>
-      <a href="https://bilem.ai">bilem.ai</a><a href="mailto:support@bilem.ai">support@bilem.ai</a>
-      <span style="margin-left:auto">bilem 0.9.3 · открытый код</span>
     </div>
   </div>
+</div>
+
+{/*  ИНСТРУМЕНТЫ  */}
+<div class="pane" id="tools">
+  <div class="stat"><div><span>Доступно в этой версии</span><b>42</b></div><div><span>Включено</span><b>39</b></div><div><span>Вызовов за 30 дней</span><b>4 812</b></div><div><span>Ошибок за 30 дней</span><b>7</b></div></div>
+  <table>
+    <tr><th></th><th>Инструмент</th><th>Что делает</th><th>Раздел</th><th>Нужна роль</th><th>Вызовов, 30 дн</th><th>Ср. время</th></tr>
+    <tr><td><span class="sw on"></span></td><td><code>balance</code></td><td>Деньги на дату: счета, кассы, валюты</td><td>Деньги</td><td>Чтение</td><td class="num">1 204</td><td class="num">0,4 с</td></tr>
+    <tr><td><span class="sw on"></span></td><td><code>debtors</code></td><td>Дебиторка по контрагентам с просрочкой</td><td>Расчёты</td><td>Чтение</td><td class="num">887</td><td class="num">0,9 с</td></tr>
+    <tr><td><span class="sw on"></span></td><td><code>sales</code></td><td>Выручка по периодам</td><td>Продажи</td><td>Чтение</td><td class="num">612</td><td class="num">0,7 с</td></tr>
+    <tr><td><span class="sw on"></span></td><td><code>taxes_due</code></td><td>Налоги к уплате и ближайшие сроки</td><td>Налоги</td><td>Чтение</td><td class="num">341</td><td class="num">1,1 с</td></tr>
+    <tr><td><span class="sw on"></span></td><td><code>counterparty_balance</code></td><td>Сальдо и обороты с контрагентом</td><td>Расчёты</td><td>Чтение</td><td class="num">298</td><td class="num">0,8 с</td></tr>
+    <tr><td><span class="sw on"></span></td><td><code>invoice_create</code></td><td>Счёт на оплату → PDF (без проведения)</td><td>Выписка</td><td>Выписка</td><td class="num">156</td><td class="num">2,3 с</td></tr>
+    <tr><td><span class="sw on"></span></td><td><code>reconciliation_create</code></td><td>Акт сверки за период → PDF</td><td>Выписка</td><td>Выписка</td><td class="num">94</td><td class="num">3,1 с</td></tr>
+    <tr><td><span class="sw on"></span></td><td><code>send_email</code></td><td>Письмо клиенту через почту 1С</td><td>Сервис</td><td>Выписка</td><td class="num">121</td><td class="num">1,8 с</td></tr>
+    <tr><td><span class="sw on"></span></td><td><code>stock</code></td><td>Остатки ТМЗ по складам</td><td>Склад</td><td>Чтение</td><td class="num">203</td><td class="num">0,6 с</td></tr>
+    <tr><td><span class="sw"></span></td><td><code>payroll_total</code></td><td>ФОТ за месяц без ФИО</td><td>Зарплата</td><td>Чтение</td><td class="num">—</td><td class="num">—</td></tr>
+    <tr><td><span class="sw"></span></td><td><code>headcount</code></td><td>Численность сотрудников</td><td>Кадры</td><td>Чтение</td><td class="num">—</td><td class="num">—</td></tr>
+    <tr><td colspan="7" style="color:#888;text-align:center">… ещё 31 инструмент · каталог строится из <code>GET /tools</code> установленной версии</td></tr>
+  </table>
+  <div class="note">Проведение, платёжки, ПКО/РКО, закрытие месяца — в каталоге отсутствуют. На такой запрос агент отвечает: «Это делает бухгалтер в 1С».</div>
+</div>
+
+{/*  ПОЧТА  */}
+<div class="pane" id="mail">
+  <div class="grid">
+    <div class="grp">
+      <h3>Учётная запись для писем клиентам</h3>
+      <div class="row"><label>Учётная запись 1С:</label><div class="inp">Бухгалтерия ТД Лакомка</div><button class="btn sm">…</button></div>
+      <div class="row"><label>Адрес отправителя:</label><div class="inp mono">buh@lakomka.kz</div></div>
+      <div class="row"><label>SMTP-сервер:</label><div class="inp mono">smtp.mail.kz</div><div class="inp mono" style="flex:0 0 60px">465</div><span class="pill g">SSL</span></div>
+      <div class="row"><label>Пароль:</label><div class="inp mono">••••••••••••</div><span class="pill n">хранится в 1С</span></div>
+      <div class="row"><label>Копия бухгалтеру:</label><div class="inp mono">glavbuh@lakomka.kz</div></div>
+      <div class="row"><label></label><button class="btn">Отправить тестовое письмо</button><span class="ok">✓ доставлено 11.10 14:02</span></div>
+      <div class="note g">Письма отправляет 1С, не облако. Пароль SMTP никогда не покидает базу.</div>
+    </div>
+    <div class="grp">
+      <h3>Шаблон письма</h3>
+      <div class="row"><label>Тема:</label><div class="inp">[Номер документа] от ТОО «ТД Лакомка»</div></div>
+      <div class="inp" style="height:120px;white-space:normal;padding:8px;line-height:1.5">Здравствуйте!<br>Направляем [Документ] № [Номер] от [Дата] на сумму [Сумма] ₸.<br><br>С уважением,<br>ТОО «ТД Лакомка»<br><span style="color:#999">Отправлено через Bilem</span></div>
+      <div class="row" style="margin-top:10px"><label>Подтверждать отправку:</label><span class="sw on"></span>&nbsp; директор подтверждает в чате</div>
+      <div class="row"><label>Логотип в PDF:</label><span class="chk on"></span>из реквизитов организации</div>
+    </div>
+  </div>
+  <h3 style="font-size:13px;color:#555;margin:18px 0 8px">Последние отправки</h3>
+  <table>
+    <tr><th>Дата</th><th>Кому</th><th>Документ</th><th>Сумма</th><th>Инициатор</th><th>Статус</th></tr>
+    <tr><td>11.10.2026 14:18</td><td>info@alem-trade.kz</td><td>Счёт на оплату № 149</td><td class="num">450 000,00</td><td>Директор (WhatsApp)</td><td><span class="pill g">доставлено</span></td></tr>
+    <tr><td>11.10.2026 11:02</td><td>buh@nur-kurylys.kz</td><td>Акт сверки 01.07–30.09</td><td class="num">—</td><td>Директор (WhatsApp)</td><td><span class="pill g">доставлено</span></td></tr>
+    <tr><td>10.10.2026 17:40</td><td>office@stroymarket.kz</td><td>Счёт на оплату № 148</td><td class="num">1 280 500,00</td><td>Менеджер (Telegram)</td><td><span class="pill y">ждёт подтверждения</span></td></tr>
+    <tr><td>10.10.2026 09:15</td><td>zakup@astana-build.kz</td><td>Счёт на оплату № 147</td><td class="num">96 400,00</td><td>Директор (WhatsApp)</td><td><span class="pill r">SMTP: ящик переполнен</span></td></tr>
+  </table>
+</div>
+
+{/*  ЖУРНАЛ  */}
+<div class="pane" id="log">
+  <div class="bar" style="padding:0 0 10px;border:0"><span>Период:</span><div class="inp" style="flex:0 0 200px">11.10.2026 — 11.10.2026</div><span>Кто:</span><div class="inp" style="flex:0 0 160px">Все</div><span>Только ошибки</span><span class="sw"></span></div>
+  <table>
+    <tr><th>Время</th><th>Кто спросил</th><th>Канал</th><th>Вопрос</th><th>Инструмент</th><th>Время ответа</th><th>Результат</th></tr>
+    <tr><td>14:31:07</td><td>Ержан (директор)</td><td>WhatsApp</td><td>сколько у нас денег на сегодня</td><td><code>balance</code></td><td class="num">0,4 с</td><td><span class="pill g">200</span></td></tr>
+    <tr><td>14:18:22</td><td>Ержан (директор)</td><td>WhatsApp</td><td>выстави счёт Алем Трейд на 450 тыс за услуги</td><td><code>invoice_create</code></td><td class="num">2,2 с</td><td><span class="pill g">201 · № 149</span></td></tr>
+    <tr><td>14:18:25</td><td>Ержан (директор)</td><td>WhatsApp</td><td>отправь им на почту</td><td><code>send_email</code></td><td class="num">1,7 с</td><td><span class="pill g">отправлено</span></td></tr>
+    <tr><td>13:55:40</td><td>Айгуль (бухгалтер)</td><td>ChatGPT</td><td>кто должен больше 30 дней</td><td><code>debtors</code></td><td class="num">0,9 с</td><td><span class="pill g">200</span></td></tr>
+    <tr><td>12:10:03</td><td>Ержан (директор)</td><td>WhatsApp</td><td>проведи реализацию Алем Трейд</td><td>—</td><td class="num">—</td><td><span class="pill y">403 · не в границах Bilem</span></td></tr>
+    <tr><td>11:02:18</td><td>Ержан (директор)</td><td>WhatsApp</td><td>акт сверки с Нур-Курылыс за квартал</td><td><code>reconciliation_create</code></td><td class="num">3,0 с</td><td><span class="pill g">201</span></td></tr>
+    <tr><td>09:00:00</td><td>Утренняя сводка</td><td>WhatsApp</td><td>три вещи на сегодня</td><td><code>balance, debtors, taxes_due</code></td><td class="num">1,9 с</td><td><span class="pill g">200</span></td></tr>
+  </table>
+  <div class="note" style="margin-top:12px">Журнал хранит только факт вызова и результат. Тексты переписки и данные 1С в облаке не сохраняются.</div>
+</div>
+
+{/*  ОБНОВЛЕНИЯ  */}
+<div class="pane" id="upd">
+  <div class="grid">
+    <div class="grp">
+      <h3>Версия расширения</h3>
+      <div class="row"><label>Установлена:</label><div class="inp ro mono">bilem 0.9.3 · 28.09.2026</div></div>
+      <div class="row"><label>Доступна:</label><div class="inp ro mono">bilem 0.10.0 · 10.10.2026</div><span class="pill y">новая</span></div>
+      <div class="row"><label>Источник:</label><div class="inp ro mono">github.com/skp-kz/bilem.cfe · releases</div></div>
+      <div class="row"><label>Обновлять автоматически:</label><span class="sw on"></span>&nbsp; при входе администратора, с подтверждением</div>
+      <div class="row"><label></label><button class="btn def">Обновить до 0.10.0</button><button class="btn">Что нового</button></div>
+    </div>
+    <div class="grp">
+      <h3>Что нового в 0.10.0</h3>
+      <ul class="chlog" style="margin:0;padding-left:18px">
+        <li>Новые инструменты: <code>esf_status</code>, <code>vat_summary</code></li>
+        <li>Акт сверки: печать с логотипом организации</li>
+        <li><code>debtors</code>: фильтр по договору и валюте</li>
+        <li>Совместимость с БП для КЗ 3.0.55</li>
+        <li>Исправлено: таймаут <code>send_email</code> при больших вложениях</li>
+      </ul>
+      <div class="note g" style="margin-top:12px">Обновление не меняет данные учёта и не требует монопольного режима.</div>
+    </div>
+    <div class="grp" style="grid-column:1/-1">
+      <h3>Служба bilem-agent</h3>
+      <div class="row"><label>Состояние:</label><span class="ok">● работает</span>&nbsp;&nbsp;версия 1.4.2 · сервер SRV-1C · подписана ТОО «СКП»</div>
+      <div class="row"><label>Канал:</label><div class="inp ro mono">исходящий TLS → mcp.bilem.ai · входящих портов нет</div></div>
+      <div class="row"><label>Код привязки:</label><div class="inp ro mono">LKM-4821-QZ</div><span class="pill g">привязано к кабинету lakomka</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="foot">
+  <span>Техническая поддержка по продукту предоставляется только при коммерческом использовании.</span>
+  <a href="https://bilem.ai">bilem.ai</a><a href="mailto:support@bilem.ai">support@bilem.ai</a>
+  <span style="margin-left:auto">bilem 0.9.3 · открытый код</span>
+</div>
+</div>
 </div>
 
 <script>
