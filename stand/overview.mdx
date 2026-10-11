@@ -1,0 +1,45 @@
+---
+title: "Стенд"
+description: "Windows Server 2025 у Славы: 1С, IIS, Claude Code. Что стоит и что не трогать."
+icon: "server"
+---
+
+Сервер `BAKANOF`, Windows Server 2025, база `lakomka` (демо БП для КЗ, ТОО «ТД Лакомка»). Это рабочее место Баканова: что докручивать — решает он.
+
+## Что стоит
+
+| Инструмент | Зачем |
+|---|---|
+| Git, GitHub Desktop, `gh` | репо `bilem.cfe`, PR и issues из терминала |
+| Node.js 24, Claude Code | терминальный агент, вход под своим Max |
+| Windows Terminal, PowerShell 7 | в старой консоли Claude Code ломает кириллицу |
+| VS Code + Language 1C (BSL) | диффы выгрузки `src/` |
+| jq, Bruno | читать JSON, коллекция запросов |
+| cloudflared (`bakanov-stand`) | RDP снаружи — `rdp.bilem.dev` |
+| Tailscale, TeamViewer | доступ Славы |
+| Effector Saver | бэкапы баз 1С на Synology |
+
+## На усмотрение Земли
+
+<CardGroup cols={2}>
+  <Card title="1С и БП КЗ 3.0" icon="cube">
+    Своя лицензия. При установке — галка «Модули расширения веб-сервера».
+  </Card>
+  <Card title="IIS" icon="globe">
+    Публикация: Конфигуратор → Администрирование → Публикация на веб-сервере → «Публиковать HTTP-сервисы».
+  </Card>
+  <Card title="Выгрузка cfe в git" icon="code-commit">
+    `1cv8 DESIGNER /DumpConfigToFiles src -Extension bilem` или свой скрипт. Бинарный `.cfe` в git не кладём.
+  </Card>
+  <Card title="EDT + EDT-MCP" icon="flask">
+    Альтернатива Конфигуратору: проект сразу текстом, Claude правит модули через MCP. Тяжёлый (Java, 8+ ГБ).
+  </Card>
+</CardGroup>
+
+## Бэкапы
+
+Synology Active Backup: мастер-образ после установки + еженедельная задача `weekly`. Effector Saver — базы 1С.
+
+<Warning>
+  Не трогать: политику обоев и Shadow, службы `Cloudflared`, `Tailscale`, `MixbackupService`, `TeamViewer`, сетевой профиль Private и правила RDP.
+</Warning>

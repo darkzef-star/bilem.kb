@@ -1,0 +1,77 @@
+---
+title: "Контракт cfe"
+description: "HTTP-сервис /hs/bilem и MCP в одном расширении. Только чтение и выписка без проведения."
+icon: "file-code"
+---
+
+Публикация базы на веб-сервере, базовый URL `http://<host>/<base>/hs/bilem`. Ответы — `application/json; charset=utf-8`.
+
+## Общие правила
+
+<CardGroup cols={2}>
+  <Card title="Авторизация" icon="key">
+    `Authorization: Bearer <токен>`. Токен — константа расширения `BilemТокен`, 64 символа. Нет или неверный → `401`.
+  </Card>
+  <Card title="Формат" icon="brackets-curly">
+    Даты `YYYY-MM-DD`, суммы — число, валюта отдельно `"currency":"KZT"`. В каждом ответе `as_of`.
+  </Card>
+</CardGroup>
+
+| Код | Когда |
+|---|---|
+| `400` | неверные параметры |
+| `401` | нет или неверный токен |
+| `403` | не хватает роли: `{"error":"forbidden","need":"Bilem_Выписка"}` |
+| `404` | нет объекта |
+| `500` | `{"error":"…","detail":"…"}` |
+
+## MCP
+
+`POST /hs/bilem/mcp/<токен>` — JSON-RPC 2.0, ответы обычным JSON, без SSE. `GET /mcp` → `405`.
+
+| Метод | Ответ |
+|---|---|
+| `initialize` | protocolVersion, serverInfo `bilem <версия>`, capabilities `tools` |
+| `notifications/initialized` | `202`, пусто |
+| `tools/list` | каталог из `GET /tools` в формате MCP |
+| `tools/call` | `content: [{type:"text", text:<JSON>}]`, ошибки — `isError: true` |
+| `ping` | `{}` |
+
+## Эндпоинты
+
+<Steps>
+  <Step title="GET /org — первый">
+    Организация базы, версии, права агента.
+    ```json
+    {
+      "as_of": "2026-10-07T12:00:00+05:00",
+      "config": { "name": "Бухгалтерия для Казахстана", "version": "3.0.52.1", "platform": "8.3.24.1234" },
+      "extension": { "name": "bilem", "version": "0.1.0" },
+      "org": { "name": "ТОО «Демо»", "bin": "123456789012", "tax_regime": "упрощённая декларация", "vat_payer": false },
+      "rights": ["read", "issue"]
+    }
+    ```
+  </Step>
+  <Step title="GET /tools — самоописание">
+    Список методов этой версии cfe: `name, method, path, description, params, needs`. Из него строятся `tools/list` и каталог облака.
+  </Step>
+  <Step title="Деньги и долги">
+    `GET /accounts?date=`, `GET /balance`, `GET /debtors?min_days=0`, `GET /taxes_due`.
+  </Step>
+  <Step title="POST /invoice — счёт на оплату">
+    Создаёт `Документ.СчетНаОплатуПокупателю` **без проведения**, печатает штатную форму в PDF, отдаёт подписанную ссылку на 1 час.
+  </Step>
+  <Step title="POST /send_email — почта через 1С">
+    SMTP и пароль живут в учётной записи почты базы, облако их не видит. Вложение — по ссылке или `print` типового документа.
+  </Step>
+</Steps>
+
+## Проверка
+
+```bash
+curl -s -H "Authorization: Bearer $T" http://localhost/lakomka/hs/bilem/org | jq
+```
+
+<Tip>
+  Приёмка эндпоинта — curl, не бот: мозг сглаживает кривые данные, ошибку cfe через чат не видно.
+</Tip>

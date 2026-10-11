@@ -1,0 +1,45 @@
+---
+title: "Доступ и совместная работа"
+description: "RDP через Cloudflare, Shadow-сессия на двоих, TeamViewer."
+icon: "user-group"
+---
+
+## RDP снаружи
+
+Туннель `bakanov-stand` → `rdp.bilem.dev` за Cloudflare Access (код на почту, сессия 24 ч).
+
+```bash
+cloudflared access rdp --hostname rdp.bilem.dev --url localhost:3390
+```
+
+Потом в RDP-клиенте — `localhost:3390`.
+
+## Одна сессия на двоих — Shadow RDP
+
+Оба видят один экран и оба управляют. Без запроса согласия — стенд, доверяем друг другу.
+
+<Steps>
+  <Step title="Слава заходит своей RDP-сессией">
+    Под своим пользователем, через Tailscale или `rdp.bilem.dev`.
+  </Step>
+  <Step title="Находит сессию Баканова">
+    ```powershell
+    quser
+    ```
+    Строка `bakanov` → колонка `ID`.
+  </Step>
+  <Step title="Подключается">
+    ```powershell
+    mstsc /v:localhost /shadow:<ID> /control /noConsentPrompt
+    ```
+    Без `/control` — только смотреть. Закрыл окно — вышел, сессия Баканова живёт дальше.
+  </Step>
+</Steps>
+
+<Note>
+  Политика: `HKLM\SOFTWARE\Policies\Microsoft\Windows NT\Terminal Services\Shadow = 2`, правила брандмауэра группы «Удалённый рабочий стол» включены.
+</Note>
+
+## TeamViewer — запасной путь
+
+Устройство `Bakanov` привязано к аккаунту Славы — консоль без пароля. Включена поддержка нескольких пользователей: у RDP-сессии Баканова свой TeamViewer-ID, вход по личному паролю. Нужен, когда важны звук, чат или передача файлов.

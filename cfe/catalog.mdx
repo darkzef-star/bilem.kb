@@ -1,0 +1,121 @@
+---
+title: "Каталог инструментов"
+description: "42 метода по разделам БП для КЗ 3.0. Черновик Воздуха — сверяется с Землёй и бухгалтером."
+icon: "list-check"
+---
+
+<Note>
+  Черновик от 10.10. Полная версия изнутри 1С — задача [bilem.cfe#1](https://github.com/skp-kz/bilem.cfe/issues/1). Названия — будущие `name` в `tools/list`.
+</Note>
+
+<Columns cols={3}>
+  <Card title="34" icon="eye">Чтение</Card>
+  <Card title="4" icon="file-pen">Выписка без проведения</Card>
+  <Card title="4" icon="gear">Печать и сервис</Card>
+</Columns>
+
+## Порядок реализации
+
+<Steps>
+  <Step title="Скелет">`org`, `health`, `tools` + MCP</Step>
+  <Step title="Четыре вопроса директора">`balance`, `debtors`, `creditors`, `sales`</Step>
+  <Step title="Цикл продажника">`counterparty_find`, `counterparty_balance`, `unpaid_invoices`, `invoice_create`, `print`</Step>
+  <Step title="Акт сверки по почте">`reconciliation_create`, `send_email`</Step>
+  <Step title="Остальное — по спросу">Инна, первые клиенты</Step>
+</Steps>
+
+## По разделам
+
+<AccordionGroup>
+  <Accordion title="Организация и справочники · 7" icon="building">
+    | name | что делает |
+    |---|---|
+    | `org` | Организация: название, БИН, режим, НДС, версии, права агента |
+    | `counterparty_find` | Поиск контрагента по названию/БИН |
+    | `counterparty` | Карточка: БИН, адрес, договоры, сальдо |
+    | `contracts` | Договоры контрагента |
+    | `nomenclature_find` | Номенклатура: цена, остаток, единица, НДС |
+    | `price_list` | Прайс по типу цен на дату |
+    | `bank_accounts` | Расчётные счета и кассы |
+  </Accordion>
+  <Accordion title="Деньги · 4" icon="wallet">
+    | name | что делает |
+    |---|---|
+    | `balance` | Деньги на дату: счета, кассы, валюты |
+    | `cash_flow` | Движение денег за период по статьям ДДС |
+    | `bank_statement` | Выписка за день/период |
+    | `cash_book` | Касса за период |
+  </Accordion>
+  <Accordion title="Расчёты с контрагентами · 6" icon="handshake">
+    | name | что делает |
+    |---|---|
+    | `debtors` | Дебиторка (1210): сумма, просрочка, последняя оплата |
+    | `creditors` | Кредиторка (3310) |
+    | `counterparty_balance` | Сальдо и обороты с одним контрагентом |
+    | `unpaid_invoices` | Выставленные неоплаченные счета |
+    | `received_unpaid` | Полученные счета без оплаты |
+    | `advances` | Авансы полученные/выданные |
+  </Accordion>
+  <Accordion title="Продажи · 5" icon="chart-line">
+    | name | что делает |
+    |---|---|
+    | `sales` | Выручка по периодам |
+    | `sales_by_customer` | По покупателям |
+    | `sales_by_item` | По номенклатуре и услугам |
+    | `invoice_status` | Счёт: оплачен ли, отгружен ли |
+    | `documents_find` | Поиск документов продажи |
+  </Accordion>
+  <Accordion title="Закупки и склад · 3" icon="boxes-stacked">
+    | name | что делает |
+    |---|---|
+    | `stock` | Остатки ТМЗ по складам |
+    | `stock_item` | Остаток и движение позиции |
+    | `purchases` | Закупки за период |
+  </Accordion>
+  <Accordion title="Налоги · 4" icon="landmark">
+    | name | что делает |
+    |---|---|
+    | `taxes_due` | Задолженность/переплата и ближайшие сроки |
+    | `tax_calendar` | Отчёты и платежи по календарю КЗ |
+    | `vat_summary` | НДС за квартал |
+    | `esf_status` | ЭСФ за период |
+  </Accordion>
+  <Accordion title="Зарплата и кадры (по роли) · 3" icon="users">
+    | name | что делает |
+    |---|---|
+    | `headcount` | Численность, приёмы/увольнения |
+    | `payroll_total` | ФОТ за месяц — без ФИО |
+    | `salary_debt` | Задолженность по зарплате |
+  </Accordion>
+  <Accordion title="ОС и отчёты · 5" icon="file-lines">
+    | name | что делает |
+    |---|---|
+    | `fixed_assets` | ОС: стоимость, амортизация, МОЛ |
+    | `osv` | Оборотно-сальдовая ведомость |
+    | `account_turnover` | Обороты по счёту с аналитикой |
+    | `pnl` | Доходы и расходы за период |
+    | `document` | Любой документ по ссылке |
+  </Accordion>
+  <Accordion title="Выписка без проведения · 4" icon="file-pen">
+    | name | что делает |
+    |---|---|
+    | `invoice_create` | Счёт на оплату → номер, сумма, PDF |
+    | `reconciliation_create` | Акт сверки → PDF |
+    | `power_of_attorney_create` | Доверенность на ТМЦ → PDF |
+    | `realization_draft` | Реализация **непроведённая** → проводит бухгалтер |
+  </Accordion>
+  <Accordion title="Печать и сервис · 4" icon="print">
+    | name | что делает |
+    |---|---|
+    | `print` | Печатная форма документа в PDF |
+    | `send_email` | Письмо через учётную запись 1С |
+    | `tools` | Самоописание методов |
+    | `health` | Версии, as_of, лицензия, время ответа |
+  </Accordion>
+</AccordionGroup>
+
+## Чего нет и не будет
+
+<Warning>
+  Проведение, платёжные поручения, ПКО/РКО, кадровые приказы, начисление зарплаты, закрытие месяца, изменение справочников, удаление. Любой такой запрос → `403 not_in_scope`: «Это делает бухгалтер в 1С».
+</Warning>

@@ -1,0 +1,58 @@
+---
+title: "Первый день на стенде"
+description: "Git, Claude Code, VS Code, токен cfe — пошагово."
+icon: "rocket"
+---
+
+Всё в Windows Terminal, PowerShell 7, от своего пользователя `bakanov`.
+
+<Steps>
+  <Step title="Git и GitHub">
+    ```powershell
+    git config --global user.name "Vyacheslav Bakanov"
+    git config --global user.email "vyacheslavbakanov.vb@gmail.com"
+    git config --global core.autocrlf false
+    gh auth login
+    gh auth refresh -s project
+    cd ~\Documents\GitHub
+    gh repo clone skp-kz/bilem.cfe
+    ```
+  </Step>
+  <Step title="Claude Code">
+    ```powershell
+    cd ~\Documents\GitHub\bilem.cfe
+    claude
+    ```
+    Тема → **Log in with Claude account** → доверять папке → разрешить MCP из `.mcp.json`. Первая команда:
+    ```
+    прочитай CLAUDE.md и README.md, потом gh issue list --assignee @me — что берём?
+    ```
+  </Step>
+  <Step title="VS Code">
+    `code .` → расширение **Claude Code** (Anthropic) или `claude` во встроенном терминале.
+  </Step>
+  <Step title="Токен cfe">
+    Когда появится обработка «Подключение Bilem»:
+    ```powershell
+    [Environment]::SetEnvironmentVariable('BILEM_TOKEN','<токен>','User')
+    ```
+    Перезапустить терминал → в `claude` команда `/mcp` покажет `bilem: connected`.
+  </Step>
+  <Step title="База знаний">
+    ```powershell
+    claude mcp add --transport http mintlify https://mcp.mintlify.com
+    ```
+    Теперь Claude может читать и дополнять эту базу.
+  </Step>
+</Steps>
+
+## Что Claude, что руками
+
+<Columns cols={2}>
+  <Card title="Claude" icon="robot">
+    Спека и каталог, код модулей HTTP-сервиса, запросы 1С, curl и MCP Inspector, PR, записи в базу.
+  </Card>
+  <Card title="Руками в Конфигураторе" icon="hand">
+    Объекты расширения (роли, константа, HTTP-сервис), публикация на IIS, права пользователя `bilem`.
+  </Card>
+</Columns>
