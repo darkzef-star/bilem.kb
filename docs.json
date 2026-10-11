@@ -30,7 +30,7 @@
           },
           {
             "group": "Продукт",
-            "pages": ["product/chto-takoe-bilem", "product/roadmap", "product/open-core"]
+            "pages": ["product/chto-takoe-bilem", "product/roadmap", "product/open-core", "product/brand"]
           },
           {
             "group": "Решения",

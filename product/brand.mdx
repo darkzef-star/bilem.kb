@@ -1,0 +1,108 @@
+---
+title: "Бренд bilem.ai"
+description: "Имя, логотип, цвета, шрифты и голос. Собрано из решений 04–09.10.2026."
+icon: "palette"
+---
+
+<Frame>
+  <img src="/images/brand/wordmark-light.png" alt="bilem.ai — логотип на светлом" className="block dark:hidden" />
+  <img src="/images/brand/wordmark-dark.png" alt="bilem.ai — логотип на тёмном" className="hidden dark:block" />
+</Frame>
+
+## Имя
+
+**Bilem** — от казахского «білем» («знаю»; разг. от «білемін»; кыргызское «билем», узбекское «bilaman»). Читается латиницей без ловушек во всех трёх странах.
+
+<CardGroup cols={2}>
+  <Card title="Так" icon="check">
+    Bilem, bilem.ai, «агент», «персональный агент для вашей 1С»
+  </Card>
+  <Card title="Не так" icon="xmark">
+    «бот», «чат-бот», BILEM капсом, Bilem.AI. Персонажа и маскота нет — собеседник сам Bilem
+  </Card>
+</CardGroup>
+
+**Слоган:** «Персональный агент для вашей 1С»
+
+**Реплика-подпись:** «— Сколько у нас денег? — Білем.»
+
+## Логотип
+
+₸ в пузыре сообщения, в зелёном круге. Знак говорит три вещи сразу: деньги (тенге), разговор (мессенджер), Казахстан.
+
+| Файл | Где использовать |
+|---|---|
+| [mark.svg](/images/brand/mark.svg) | знак без надписи: фавикон, аватар, иконка приложения |
+| [wordmark-light.png](/images/brand/wordmark-light.png) | знак + bilem.ai на светлом фоне |
+| [wordmark-dark.png](/images/brand/wordmark-dark.png) | знак + bilem.ai на тёмном фоне |
+| [wordmark-transparent.png](/images/brand/wordmark-transparent.png) | на прозрачном фоне |
+| [avatar-640.png](/images/brand/avatar-640.png) | аватар WhatsApp / Telegram / соцсетей |
+
+<Warning>
+  Не перекрашивать знак, не вытягивать, не класть зелёный круг на зелёный фон. Вокруг знака — поле не меньше половины его высоты. Векторный вордмарк (SVG) пока не сделан — есть только PNG 1260×360.
+</Warning>
+
+## Цвета
+
+<Columns cols={3}>
+  <Card title="Bilem Green" icon="circle">
+    `#1FAF5A` — знак, `.ai` в вордмарке, главные действия
+  </Card>
+  <Card title="WhatsApp Green" icon="circle">
+    `#25D366` — знак на тёмном фоне, всё про канал WhatsApp
+  </Card>
+  <Card title="Пузырь" icon="message">
+    `#D9FDD3` — исходящее сообщение в макетах чата
+  </Card>
+  <Card title="Cream" icon="square">
+    `#FBF7F0` — светлый фон сайта
+  </Card>
+  <Card title="Night" icon="square">
+    `#0E0B08` — тёмный фон сайта, текст на светлом
+  </Card>
+  <Card title="Ink" icon="square">
+    `#282A30` — текст и кнопки в кабинете (светлая тема)
+  </Card>
+</Columns>
+
+**Правило:** зелёный — только бренд и главное действие. Всё остальное монохромное. Цвет в интерфейсе несёт смысл (статус, ошибка), а не украшает.
+
+## Шрифты
+
+| Где | Заголовки | Текст | Цифры и код |
+|---|---|---|---|
+| Сайт bilem.ai | **Jura** 600–700 (им же набран вордмарк) | Didact Gothic | Source Code Pro |
+| Кабинет app.bilem.ai | Geist 500 | Geist | Geist Mono |
+
+Все — Google Fonts, бесплатные. В документах (счета, КП) — системный sans-serif.
+
+## Голос
+
+<AccordionGroup>
+  <Accordion title="Интерфейс к базе, не собеседник" icon="database">
+    Каждый ответ — из 1С, с источником и датой (`as_of`). Нет данных — честно: «білмеймін», «в базе этого нет». Знания о мире и интернет не используем.
+  </Accordion>
+  <Accordion title="Коротко, текстом, по делу" icon="align-left">
+    Отвечаем текстом, даже если спросили голосом — читается быстрее, чем слушается. Цифра первой строкой, детали ниже. Без эмодзи-гирлянд и «Отличный вопрос!».
+  </Accordion>
+  <Accordion title="Тон «швейцарского банка»" icon="building-columns">
+    О данных: «никому ничего не передаём, не продаём, не храним дольше обработки, не обучаем». Точка. Не оправдываемся и не объясняем внутреннюю кухню без запроса.
+  </Accordion>
+  <Accordion title="Не навреди учёту" icon="shield">
+    Обещание жирным везде: Bilem не проводит документы и не делает платёжки. Подробнее — [0002](/decisions/0002-ne-trogaem-uchet).
+  </Accordion>
+  <Accordion title="Два языка" icon="language">
+    Русский и казахский на равных. Казахский текст проверяет лингвист. Термины — по словарю `glossary.md` в Brain.
+  </Accordion>
+</AccordionGroup>
+
+## Где живёт бренд
+
+- Сайт: [bilem.ai](https://bilem.ai), казахская версия `/kz/`
+- Кабинет: `app.bilem.ai`
+- Instagram: @bilem.ai
+- Исходники логотипа: `minidesk/bilem-site/assets/logo/`, концепты — `docs/mockups/bilem-logo*.html`
+
+<Note>
+  База знаний `kb.bilem.ai` намеренно в тёплой терракотовой палитре — это внутренний инструмент команды, не лицо продукта.
+</Note>
