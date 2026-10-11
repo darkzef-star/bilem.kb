@@ -26,11 +26,17 @@
         "groups": [
           {
             "group": "Старт",
-            "pages": ["index", "process/kak-pisat"]
+            "pages": [
+              "index",
+              "process/kak-pisat"
+            ]
           },
           {
             "group": "Продукт",
-            "pages": ["product/chto-takoe-bilem", "product/open-core"]
+            "pages": [
+              "product/chto-takoe-bilem",
+              "product/open-core"
+            ]
           },
           {
             "group": "Решения",
@@ -48,15 +54,22 @@
         "groups": [
           {
             "group": "Контракт",
-            "pages": ["cfe/spec", "cfe/roles"]
+            "pages": [
+              "cfe/spec",
+              "cfe/roles"
+            ]
           },
           {
             "group": "Инструменты",
-            "pages": ["cfe/catalog"]
+            "pages": [
+              "cfe/catalog"
+            ]
           },
           {
             "group": "1С",
-            "pages": ["onec/index"]
+            "pages": [
+              "onec/index"
+            ]
           }
         ]
       },
@@ -65,15 +78,26 @@
         "groups": [
           {
             "group": "Стенд",
-            "pages": ["stand/overview", "stand/first-day", "stand/dostup"]
+            "pages": [
+              "stand/overview",
+              "stand/first-day",
+              "stand/dostup"
+            ]
           },
           {
             "group": "Как работаем",
-            "pages": ["process/workflow", "process/review"]
+            "pages": [
+              "process/workflow",
+              "process/review"
+            ]
           },
           {
             "group": "Встречи",
-            "pages": ["meetings/2026-10-10", "meetings/2026-10-11"]
+            "pages": [
+              "meetings/2026-10-10-2",
+              "meetings/2026-10-10",
+              "meetings/2026-10-11"
+            ]
           }
         ]
       }
@@ -94,7 +118,14 @@
     }
   },
   "contextual": {
-    "options": ["copy", "view", "claude", "mcp", "cursor", "vscode"]
+    "options": [
+      "copy",
+      "view",
+      "claude",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
