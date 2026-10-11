@@ -65,7 +65,8 @@
               "cfe/tz-forma-podklyucheniya",
               "cfe/spec",
               "cfe/roles",
-              "cfe/tz-0000-0001"
+              "cfe/tz-0000-0001",
+              "cfe/whoami"
             ]
           },
           {
