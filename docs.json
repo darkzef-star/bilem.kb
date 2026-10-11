@@ -63,7 +63,8 @@
               "cfe/maket-prod",
               "cfe/tz-forma-podklyucheniya",
               "cfe/spec",
-              "cfe/roles"
+              "cfe/roles",
+              "cfe/tz-0000-0001"
             ]
           },
           {
@@ -96,7 +97,8 @@
             "group": "Как работаем",
             "pages": [
               "process/workflow",
-              "process/review"
+              "process/review",
+              "process/zhurnal-cfe"
             ]
           },
           {
