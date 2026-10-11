@@ -59,6 +59,7 @@
           {
             "group": "Контракт",
             "pages": [
+              "cfe/maket-prod",
               "cfe/spec",
               "cfe/roles"
             ]
