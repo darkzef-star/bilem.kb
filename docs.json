@@ -60,6 +60,7 @@
             "group": "Контракт",
             "pages": [
               "cfe/maket-prod",
+              "cfe/tz-forma-podklyucheniya",
               "cfe/spec",
               "cfe/roles"
             ]
