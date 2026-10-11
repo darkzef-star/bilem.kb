@@ -21,7 +21,8 @@ icon: "file-code"
 |---|---|
 | `400` | неверные параметры |
 | `401` | нет или неверный токен |
-| `403` | не хватает роли: `{"error":"forbidden","need":"Bilem_Выписка"}` |
+| `403` | не хватает роли: `{"error":"forbidden","need":"Bilem_Расчеты"}` |
+| `403` | инструмент отключён политикой: `{"error":"forbidden","reason":"disabled_by_admin"}` |
 | `404` | нет объекта |
 | `500` | `{"error":"…","detail":"…"}` |
 
@@ -33,7 +34,7 @@ icon: "file-code"
 |---|---|
 | `initialize` | protocolVersion, serverInfo `bilem <версия>`, capabilities `tools` |
 | `notifications/initialized` | `202`, пусто |
-| `tools/list` | каталог из `GET /tools` в формате MCP |
+| `tools/list` | каталог из `GET /tools` в формате MCP — **только разрешённые**: есть роль у `bilem` и включено в политике ([0006](/decisions/0006-prava-v-1c)) |
 | `tools/call` | `content: [{type:"text", text:<JSON>}]`, ошибки — `isError: true` |
 | `ping` | `{}` |
 
@@ -48,12 +49,15 @@ icon: "file-code"
       "config": { "name": "Бухгалтерия для Казахстана", "version": "3.0.52.1", "platform": "8.3.24.1234" },
       "extension": { "name": "bilem", "version": "0.1.0" },
       "org": { "name": "ТОО «Демо»", "bin": "123456789012", "tax_regime": "упрощённая декларация", "vat_payer": false },
-      "rights": ["read", "issue"]
+      "roles": ["Bilem_Справочники", "Bilem_Деньги", "Bilem_Расчеты", "Bilem_ВыпискаСчетов"],
+      "tools_enabled": 31,
+      "tools_disabled_by_admin": ["reconciliation_create", "payroll_total"]
     }
     ```
+    `roles` — фактически действующие роли пользователя `bilem`, `tools_disabled_by_admin` — что выключено политикой. Кабинет показывает это как есть.
   </Step>
   <Step title="GET /tools — самоописание">
-    Список методов этой версии cfe: `name, method, path, description, params, needs`. Из него строятся `tools/list` и каталог облака.
+    Список методов этой версии cfe: `name, method, path, description, params, role, policy_params, enabled`. Из него строятся `tools/list` и каталог облака. Отключённые методы видны в `/tools` с `enabled: false`, но не попадают в `tools/list`.
   </Step>
   <Step title="Деньги и долги">
     `GET /accounts?date=`, `GET /balance`, `GET /debtors?min_days=0`, `GET /taxes_due`.
