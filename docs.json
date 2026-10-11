@@ -3,9 +3,20 @@
   "theme": "mint",
   "name": "Bilem — база знаний",
   "colors": {
-    "primary": "#1FAF5A",
-    "light": "#3DD47A",
-    "dark": "#15803D"
+    "primary": "#C2552D",
+    "light": "#E07A4F",
+    "dark": "#9E3F1D"
+  },
+  "background": {
+    "color": {
+      "light": "#FBF6EE",
+      "dark": "#1C1612"
+    }
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg",
+    "href": "/"
   },
   "favicon": "/favicon.svg",
   "navigation": {
