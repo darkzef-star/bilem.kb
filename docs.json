@@ -26,17 +26,11 @@
         "groups": [
           {
             "group": "Старт",
-            "pages": [
-              "index",
-              "process/kak-pisat"
-            ]
+            "pages": ["index", "process/dlya-claude-code", "process/kak-pisat"]
           },
           {
             "group": "Продукт",
-            "pages": [
-              "product/chto-takoe-bilem",
-              "product/open-core"
-            ]
+            "pages": ["product/chto-takoe-bilem", "product/roadmap", "product/open-core"]
           },
           {
             "group": "Решения",
@@ -44,7 +38,8 @@
               "decisions/0001-open-core",
               "decisions/0002-ne-trogaem-uchet",
               "decisions/0003-cfe-mcp-server",
-              "decisions/0004-zadachi-v-github"
+              "decisions/0004-zadachi-v-github",
+              "decisions/0005-put-k-kommercii"
             ]
           }
         ]
@@ -54,22 +49,15 @@
         "groups": [
           {
             "group": "Контракт",
-            "pages": [
-              "cfe/spec",
-              "cfe/roles"
-            ]
+            "pages": ["cfe/spec", "cfe/roles"]
           },
           {
             "group": "Инструменты",
-            "pages": [
-              "cfe/catalog"
-            ]
+            "pages": ["cfe/catalog"]
           },
           {
             "group": "1С",
-            "pages": [
-              "onec/index"
-            ]
+            "pages": ["onec/index", "onec/sreda"]
           }
         ]
       },
@@ -78,25 +66,15 @@
         "groups": [
           {
             "group": "Стенд",
-            "pages": [
-              "stand/overview",
-              "stand/first-day",
-              "stand/dostup"
-            ]
+            "pages": ["stand/overview", "stand/first-day", "stand/dostup"]
           },
           {
             "group": "Как работаем",
-            "pages": [
-              "process/workflow",
-              "process/review"
-            ]
+            "pages": ["process/workflow", "process/review"]
           },
           {
             "group": "Встречи",
-            "pages": [
-              "meetings/2026-10-10",
-              "meetings/2026-10-11"
-            ]
+            "pages": ["meetings/2026-10-10", "meetings/2026-10-11"]
           }
         ]
       }
@@ -117,14 +95,7 @@
     }
   },
   "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "claude",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
+    "options": ["copy", "view", "claude", "mcp", "cursor", "vscode"]
   },
   "footer": {
     "socials": {
