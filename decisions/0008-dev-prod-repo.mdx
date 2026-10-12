@@ -1,0 +1,40 @@
+---
+title: "0008 · Два репо: bilem.cfe-dev и bilem.cfe"
+description: "Разработка идёт в закрытом bilem.cfe-dev, в публичный bilem.cfe попадают только альфа-релизы и рабочий код."
+icon: "code-fork"
+---
+
+**Дата:** 2026-10-12 · **Кто:** Слава · **Статус:** принято
+
+## Решение
+
+| | Репо | Видимость | Что там |
+| --- | --- | --- | --- |
+| **Dev** | `skp-kz/bilem.cfe-dev` | закрытый | Вся разработка: ветки `cfe/NNNN-<slug>`, PR, `docs/`, `CLAUDE.md`, журнал |
+| **Prod** | `skp-kz/bilem.cfe` | публичный | Рабочий код `src/`, `README.md`, `LICENSE`, `CHANGELOG.md`, GitHub Releases |
+
+- Коммитим и ведём PR **только в Dev**.
+- В Prod переносим рабочий код как **майлстоны**: каждый — альфа-релиз `v0.X.Y-alpha.N` с `bilem.cfe` и `bilem.cfe.sha256` (см. [0007](/decisions/0007-publichnyj-repo-mit)).
+- Напрямую в Prod не коммитим. Внутренние доки, `CLAUDE.md`, `.mcp.json`, токены и документация ИТС в Prod не попадают.
+
+## Порядок работы
+
+<Steps>
+  <Step title="Задача">
+    Ветка `cfe/NNNN-<slug>` от `main` в `bilem.cfe-dev`, PR в `main` Dev, ревью другой стороной ([цикл задачи](/process/workflow)).
+  </Step>
+  <Step title="Майлстон">
+    Когда набор задач работает и принят `curl`-ом, Земля выгружает `src/` в Prod одним коммитом «релиз vX.Y.Z-alpha.N».
+  </Step>
+  <Step title="Релиз">
+    `gh release create vX.Y.Z-alpha.N bilem.cfe bilem.cfe.sha256 --prerelease --notes-file CHANGELOG.md` в Prod.
+  </Step>
+</Steps>
+
+## Доступ
+
+Проверено 2026-10-12 для аккаунта `VyacheslavBakanovExtraSoft` (стенд, `gh`): в обоих репо `push` и `pull`, прав admin нет. Доступ второго участника (Слава, `vprimin`) проверить нельзя без прав admin — нужно подтвердить в настройках репо.
+
+<Note>
+  Ветки `cfe/0002-forma-podklyucheniya` и `cfe/0003-whoami` уже лежат в Dev. Ветка `cfe/0004-balance` пока только локальная на стенде. Репо `bilem.cfe` на момент записи уже публичный; чистоту его истории по чек-листу 0007 нужно проверить перед первым альфа-релизом.
+</Note>
