@@ -56,7 +56,10 @@
           {
             "group": "Голос клиента",
             "icon": "comments",
-            "pages": []
+            "pages": [
+              "golos/index",
+              "golos/respondenty"
+            ]
           }
         ]
       },
