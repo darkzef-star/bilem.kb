@@ -8,6 +8,10 @@ icon: "plug-circle-check"
   Первая живая цепочка: Claude вызывает инструмент `whoami`, отвечает 1С на стенде. Минимум кода, чтобы проверить всё сразу — HTTP-сервис, MCP, публикацию, туннель, коннектор. Дальше Баканов превращает это в `org` по [контракту](/cfe/spec). Код написан без запуска — первый синтаксический контроль на стенде.
 </Info>
 
+<Check>
+  **12.10.2026 — цепочка работает на стенде.** `/whoami` и `tools/call whoami` отвечают из 1С (платформа 8.3.27.2342, БП КЗ 3.0.73.1, расширение 0.1.0). Источник правды по коду — ветка `cfe/0003-whoami` в репо, эта страница — инструкция.
+</Check>
+
 Всё на стенде, в сессии `vprimin`, Конфигуратор — **от имени администратора**. База уже опубликована как `/lakomka` (веб-клиент), снаружи `1c.bilem.dev` за Cloudflare Access.
 
 ## 1. Объекты в расширении `bilem`
@@ -18,7 +22,7 @@ icon: "plug-circle-check"
 | HTTP-сервис | `bilem` | Корневой URL `bilem`, повторное использование сеансов — автоматически |
 | └ шаблон | `whoami` | `/whoami`, GET → `whoamiGET` |
 | └ шаблон | `mcp` | `/mcp/{token}`, POST → `mcpPOST`, GET → `mcpGET` |
-| Роль | `Bilem_Агент` | HTTP-сервис `bilem` — Использование; Константа `BilemТокен` — Чтение |
+| Роль | `Bilem_Агент` | **Использование на методах шаблонов** (`whoamiGET`, `mcpPOST`, `mcpGET`), а не на сервисе целиком; Константа `BilemТокен` — Чтение; Справочник `Организации` — Чтение (иначе `org: null`) |
 
 Модуль HTTP-сервиса — целиком из раздела «Модуль» внизу страницы. Обработчики, которые Конфигуратор создаст сам, удалить. Затем **F7 — Обновить конфигурацию базы данных**.
 
@@ -53,7 +57,7 @@ Usr=bilem;Pwd=ПАРОЛЬ_BILEM;
 ## 5. Проверка на стенде
 
 ```powershell
-Invoke-RestMethod -Uri "http://localhost/lakomka-api/hs/bilem/whoami" -Headers @{Authorization="Bearer $T"} | ConvertTo-Json
+Invoke-RestMethod -Uri "http://localhost/lakomka-api/hs/bilem/whoami" -Headers @{"X-Bilem-Token"=$T} | ConvertTo-Json
 
 Invoke-RestMethod -Method Post -Uri "http://localhost/lakomka-api/hs/bilem/mcp/$T" -ContentType "application/json" `
   -Body '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"whoami","arguments":{}}}' | ConvertTo-Json -Depth 6
@@ -81,7 +85,7 @@ Invoke-RestMethod -Method Post -Uri "http://localhost/lakomka-api/hs/bilem/mcp/$
 
 ```bsl
 // HTTP-сервис bilem (расширение bilem) — минимальная проверка цепочки 1С → MCP.
-// Шаблоны:  /whoami        GET  → whoamiGET   (проверка curl, токен в заголовке Authorization: Bearer)
+// Шаблоны:  /whoami        GET  → whoamiGET   (проверка curl, токен в заголовке X-Bilem-Token — Authorization перехватывает платформа)
 //           /mcp/{token}   POST → mcpPOST     (MCP Streamable HTTP, JSON-RPC 2.0, без SSE)
 //           /mcp/{token}   GET  → mcpGET      (405 — SSE не поддерживаем)
 // Один инструмент: whoami. Ничего не пишет в базу. Привилегированный режим не используется.
@@ -251,7 +255,7 @@ Invoke-RestMethod -Method Post -Uri "http://localhost/lakomka-api/hs/bilem/mcp/$
 	Данные.Вставить("user_full_name", ПолноеИмяПользователя());
 	Данные.Вставить("config", Конфигурация);
 	СистемнаяИнформация = Новый СистемнаяИнформация;
-  Данные.Вставить("platform", СистемнаяИнформация.ВерсияПриложения);
+	Данные.Вставить("platform", СистемнаяИнформация.ВерсияПриложения);
 	Данные.Вставить("extension", Расширение);
 	Данные.Вставить("org", НаименованиеОрганизации());
 	Данные.Вставить("note", "Bilem не влияет на учёт: только чтение и непроведённые документы.");
@@ -301,14 +305,14 @@ Invoke-RestMethod -Method Post -Uri "http://localhost/lakomka-api/hs/bilem/mcp/$
 
 Функция ТокенИзЗаголовка(Запрос)
 
-	Заголовок = Запрос.Заголовки.Получить("Authorization");
+	Заголовок = Запрос.Заголовки.Получить("X-Bilem-Token");
 	Если Заголовок = Неопределено Тогда
-		Заголовок = Запрос.Заголовки.Получить("authorization");
+		Заголовок = Запрос.Заголовки.Получить("x-bilem-token");
 	КонецЕсли;
-	Если Заголовок = Неопределено Или Не СтрНачинаетсяС(НРег(Заголовок), "bearer ") Тогда
+	Если Заголовок = Неопределено Тогда
 		Возврат "";
 	КонецЕсли;
-	Возврат СокрЛП(Сред(Заголовок, 8));
+	Возврат СокрЛП(Заголовок);
 
 КонецФункции
 
