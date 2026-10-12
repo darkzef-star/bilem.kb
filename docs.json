@@ -36,6 +36,7 @@
             "group": "Продукт",
             "pages": [
               "product/chto-takoe-bilem",
+              "product/menu-uslug",
               "product/roadmap",
               "product/open-core",
               "product/brand"
@@ -58,7 +59,6 @@
             "icon": "comments",
             "pages": [
               "golos/index",
-              "product/menu-uslug",
               "golos/respondenty"
             ]
           }
