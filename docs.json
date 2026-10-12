@@ -52,6 +52,11 @@
               "decisions/0006-prava-v-1c",
               "decisions/0007-publichnyj-repo-mit"
             ]
+          },
+          {
+            "group": "Голос клиента",
+            "icon": "comments",
+            "pages": []
           }
         ]
       },
