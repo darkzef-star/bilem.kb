@@ -38,8 +38,7 @@
               "product/chto-takoe-bilem",
               "product/roadmap",
               "product/open-core",
-              "product/brand",
-              "product/menu-uslug"
+              "product/brand"
             ]
           },
           {
@@ -59,6 +58,7 @@
             "icon": "comments",
             "pages": [
               "golos/index",
+              "product/menu-uslug",
               "golos/respondenty"
             ]
           }
