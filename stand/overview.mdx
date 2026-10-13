@@ -29,12 +29,16 @@ icon: "server"
     Публикация: Конфигуратор → Администрирование → Публикация на веб-сервере → «Публиковать HTTP-сервисы».
   </Card>
   <Card title="Выгрузка cfe в git" icon="code-commit">
-    `1cv8 DESIGNER /DumpConfigToFiles src -Extension bilem` или свой скрипт. Бинарный `.cfe` в git не кладём.
+    Бинарный `.cfe` в git не кладём. С 13.10 Конфигуратор агентом не используется (базу держит EDT) — загрузка и заимствование через EDT-MCP, см. [Paperclip](/stand/paperclip).
   </Card>
   <Card title="EDT + EDT-MCP" icon="flask">
     Альтернатива Конфигуратору: проект сразу текстом, Claude правит модули через MCP. Тяжёлый (Java, 8+ ГБ).
   </Card>
 </CardGroup>
+
+<Tip>
+  Агентный конвейер (Paperclip → мост → Claude Code на стенде → EDT-MCP), грабли и текущее состояние — на странице [Paperclip](/stand/paperclip).
+</Tip>
 
 ## Бэкапы
 
