@@ -82,6 +82,7 @@
           {
             "group": "Инструменты",
             "pages": [
+              "cfe/tools-live",
               "cfe/catalog"
             ]
           },
