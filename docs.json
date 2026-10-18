@@ -58,7 +58,8 @@
               "decisions/0009-odata-agent-vmesto-cfe",
               "decisions/0010-besplatno-bez-limitov",
               "decisions/0011-csharp-net48",
-              "decisions/0012-podpis-koda"
+              "decisions/0012-podpis-koda",
+              "decisions/0013-belyj-spisok-zapisi"
             ]
           },
           {
