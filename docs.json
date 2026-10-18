@@ -56,7 +56,8 @@
               "decisions/0008-dev-prod-repo",
               "decisions/0009-odata-agent-vmesto-cfe",
               "decisions/0010-besplatno-bez-limitov",
-              "decisions/0011-csharp-net48"
+              "decisions/0011-csharp-net48",
+              "decisions/0012-podpis-koda"
             ]
           },
           {
