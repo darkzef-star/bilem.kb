@@ -128,7 +128,8 @@
               "stand/agent-app-v01-log",
               "stand/ci-build-yml",
               "stand/agent-app-v01-pravki",
-              "stand/agent-app-v02"
+              "stand/agent-app-v02",
+              "stand/agent-app-v02-log"
             ]
           },
           {
