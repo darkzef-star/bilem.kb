@@ -55,7 +55,8 @@
               "decisions/0007-publichnyj-repo-mit",
               "decisions/0008-dev-prod-repo",
               "decisions/0009-odata-agent-vmesto-cfe",
-              "decisions/0010-besplatno-bez-limitov"
+              "decisions/0010-besplatno-bez-limitov",
+              "decisions/0011-csharp-net48"
             ]
           },
           {
@@ -110,7 +111,8 @@
               "stand/dostup",
               "stand/paperclip",
               "stand/agent-spike",
-              "stand/agent-spike-log"
+              "stand/agent-spike-log",
+              "stand/agent-app-v01"
             ]
           },
           {
