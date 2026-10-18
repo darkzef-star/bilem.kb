@@ -123,7 +123,8 @@
               "stand/agent-spike",
               "stand/agent-spike-log",
               "stand/agent-app-v01",
-              "stand/agent-app-v01-log"
+              "stand/agent-app-v01-log",
+              "stand/ci-build-yml"
             ]
           },
           {

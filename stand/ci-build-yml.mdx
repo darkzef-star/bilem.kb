@@ -1,0 +1,46 @@
+---
+title: "CI bilem.agent: .github/workflows/build.yml"
+sidebarTitle: "CI build.yml"
+description: "Полный текст файла .github/workflows/build.yml для skp-kz/bilem.agent — добавить через веб-интерфейс GitHub."
+icon: "gears"
+---
+
+```yaml
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Юнит-тесты Core
+        run: dotnet test tests/Bilem.Agent.Core.Tests -c Release
+
+      - name: Сборка
+        run: dotnet build Bilem.Agent.sln -c Release
+
+      - name: Архив bilem-agent-<версия>.zip
+        id: pkg
+        shell: pwsh
+        run: ./build/package.ps1 -Configuration Release
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: bilem-agent-${{ steps.pkg.outputs.version }}
+          path: artifacts/pkg/bilem-agent-*.zip
+          if-no-files-found: error
+```
