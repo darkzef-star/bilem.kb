@@ -70,6 +70,15 @@
         ]
       },
       {
+        "tab": "Маркетинг",
+        "pages": [
+          "marketing/research",
+          "marketing/konkurenty",
+          "marketing/kanaly-i-soobshchestva",
+          "marketing/ezhenedelnye-srezy"
+        ]
+      },
+      {
         "tab": "cfe",
         "groups": [
           {
