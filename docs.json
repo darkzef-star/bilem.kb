@@ -39,7 +39,8 @@
               "product/menu-uslug",
               "product/roadmap",
               "product/open-core",
-              "product/brand"
+              "product/brand",
+              "product/ai-nakhodimost"
             ]
           },
           {
@@ -53,7 +54,8 @@
               "decisions/0006-prava-v-1c",
               "decisions/0007-publichnyj-repo-mit",
               "decisions/0008-dev-prod-repo",
-              "decisions/0009-odata-agent-vmesto-cfe"
+              "decisions/0009-odata-agent-vmesto-cfe",
+              "decisions/0010-besplatno-bez-limitov"
             ]
           },
           {
