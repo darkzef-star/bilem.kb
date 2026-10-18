@@ -23,7 +23,7 @@
     "tabs": [
       {
         "tab": "База",
-        "groups": [
+        "pages": [
           {
             "group": "Старт",
             "pages": [
@@ -62,7 +62,8 @@
               "golos/index",
               "golos/respondenty"
             ]
-          }
+          },
+          "buddy-test"
         ]
       },
       {
