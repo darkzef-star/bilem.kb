@@ -13,6 +13,10 @@ icon: "signature"
 - **Первая бета (v0.3.0) — без подписи.** Целостность обновлений — своей подписью релиза (Ed25519, открытый ключ зашит в агент). Когда Microsoft выдаст сертификат — следующий релиз подписан, агент дополнительно проверяет издателя «SKP.kz LLC».
 - **D-U-N-S** не нужен для Azure. Нужен для Apple Developer (\$99/год) — позже.
 
+## Ход работ
+
+- **18.10.2026:** шаги 1–4 сделаны. Подписка Azure, аккаунт `bilemsigning` (RG `bilem-signing`, East US, Basic), роль Identity Verifier выдана Славе. Email Routing bilem.ai включён (MX/SPF/DKIM), `slava@` и `admin@bilem.ai` → почта Славы. Заявка Identity validation (Public, SKP.KZ LLC, Registered Business Number = Texas SOS File Number) подана, статус In Progress. Имя заявителя совпадает с паспортом. Ждём письмо Microsoft на проверку личности; принять обновлённые terms of use Artifact Signing в портале (баннер) — Слава.
+
 ## Что нужно от Славы (по quickstart Microsoft, май 2026)
 
 1. Cloudflare: bilem.ai → Registrar → Contacts → Organization «SKP.kz LLC», адрес как в документах LLC; Email Routing: `slava@bilem.ai`, `admin@bilem.ai`.
