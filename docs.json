@@ -74,16 +74,7 @@
         ]
       },
       {
-        "tab": "Маркетинг",
-        "pages": [
-          "marketing/research",
-          "marketing/konkurenty",
-          "marketing/kanaly-i-soobshchestva",
-          "marketing/ezhenedelnye-srezy"
-        ]
-      },
-      {
-        "tab": "cfe",
+        "tab": "Архив · cfe",
         "groups": [
           {
             "group": "Контракт",
@@ -111,6 +102,15 @@
               "onec/sreda"
             ]
           }
+        ]
+      },
+      {
+        "tab": "Маркетинг",
+        "pages": [
+          "marketing/research",
+          "marketing/konkurenty",
+          "marketing/kanaly-i-soobshchestva",
+          "marketing/ezhenedelnye-srezy"
         ]
       },
       {
