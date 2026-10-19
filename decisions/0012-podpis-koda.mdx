@@ -16,6 +16,7 @@ icon: "signature"
 ## Ход работ
 
 - **18.10.2026:** шаги 1–4 сделаны. Подписка Azure, аккаунт `bilemsigning` (RG `bilem-signing`, East US, Basic), роль Identity Verifier выдана Славе. Email Routing bilem.ai включён (MX/SPF/DKIM), `slava@` и `admin@bilem.ai` → почта Славы. Заявка Identity validation (Public, SKP.KZ LLC, Registered Business Number = Texas SOS File Number) подана, статус In Progress. Имя заявителя совпадает с паспортом. Ждём письмо Microsoft на проверку личности; принять обновлённые terms of use Artifact Signing в портале (баннер) — Слава.
+- **19.10.2026:** Microsoft одобрил SKP.KZ LLC (Validation Pass). Профиль `bilem-public` (Public Trust, `CN=SKP.KZ LLC, O=SKP.KZ LLC, L=Plano, S=Texas, C=US`, без улицы и индекса), приложение Entra `bilem-ai-github-signing` (федеративные учётки на среду GitHub `release`), роль Certificate Profile Signer. **Первый подписанный релиз — `v0.3.0-beta.9`**: MSI и все exe подписаны, на новом сервере Windows показывает «Издатель: SKP.KZ LLC» без «Разблокировать». Попутно: bilem.ai — Always Use HTTPS (Chrome блокировал скачивание по цепочке с http).
 
 ## Что нужно от Славы (по quickstart Microsoft, май 2026)
 
