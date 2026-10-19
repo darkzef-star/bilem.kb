@@ -144,7 +144,8 @@
               "process/zemlya-vozduh",
               "process/kb-zapis",
               "process/repo-bilem-agent",
-              "process/komanda"
+              "process/komanda",
+              "process/lyudi-follow-up"
             ]
           },
           {
