@@ -247,6 +247,27 @@ icon: "file-signature"
 
 **Выпуск:** `v0.3.0-beta.3` с пунктами 2–4 и 6. Сервер Славы пока остаётся без .NET — на нём и проверяем.
 
+### F7. Подпись Microsoft (Authenticode) — включить (19.10)
+
+<Check>
+  Microsoft одобрил SKP.KZ LLC (Identity validation — **Validation Pass**). В Azure готово: профиль сертификата **`bilem-public`** (Public Trust, `CN=SKP.KZ LLC, O=SKP.KZ LLC, L=Plano, S=Texas, C=US`, Active); приложение Entra **`bilem-ai-github-signing`** с двумя федеративными учётками для GitHub Actions — среда **`release`** (новый формат с ID и классический `repo:skp-kz/bilem.ai:environment:release`); роль «Artifact Signing Certificate Profile Signer» на аккаунте `bilemsigning` назначает Слава.
+</Check>
+
+1. **Среда GitHub `release`** в `skp-kz/bilem.ai`: `gh api -X PUT repos/skp-kz/bilem.ai/environments/release` (с одобрения Славы). В `release.yml` у job `release` добавить `environment: release` — без этого Azure не выдаст токен (federated credential привязан к среде).
+2. **Переменные репозитория** (не секреты; `gh variable set … -R skp-kz/bilem.ai`):
+   | Переменная | Значение |
+   | --- | --- |
+   | `AZURE_TENANT_ID` | `847ba07d-b2fc-462e-a829-c2be76b8c187` |
+   | `AZURE_CLIENT_ID` | `e5507247-3bb7-4034-92df-ef3fc9645427` |
+   | `AZURE_SUBSCRIPTION_ID` | `28e4c191-f771-4ca9-93a0-ad2dba454094` |
+   | `AZURE_SIGNING_ENDPOINT` | `https://eus.codesigning.azure.net/` |
+   | `AZURE_SIGNING_ACCOUNT` | `bilemsigning` |
+   | `AZURE_SIGNING_PROFILE` | `bilem-public` |
+3. **Издатель в агенте:** в сертификате `SKP.KZ LLC` (заглавные), в коде проверка обновлений — «SKP.kz LLC». Сравнивать **без учёта регистра** (или по `SKP.KZ LLC`), иначе подписанное обновление будет отвергнуто. В MSI `Manufacturer` и «О программе» можно оставить «SKP.kz LLC».
+4. **`azure/login`**: в шаге входа без подписки может понадобиться `allow-no-subscriptions: true` — у приложения нет ролей на уровне подписки, только на аккаунте подписи; если вход падает на «No subscriptions found» — добавить.
+5. **Проверка:** следующий тег (beta.N) → в логе Actions шаги Authenticode выполнены; у скачанного MSI и `bilem-agent.exe` — «Свойства → Цифровые подписи → SKP.KZ LLC», `Get-AuthenticodeSignature` — `Valid`; SmartScreen на чистой машине не показывает «Неизвестный издатель». Агент с прошлой беты обновляется кнопкой (издатель проверен).
+6. README и заметки к релизу — убрать «бета без подписи Microsoft… SmartScreen / Разблокировать» после первого подписанного релиза.
+
 ### F5. Приёмка (Слава, боевой сервер, одна база)
 
 1. Земля выпускает `v0.3.0-beta.1` → Слава скачивает MSI с GitHub Releases на сервер → установка → онбординг с одной базой → MCP с Мака через Tailscale. Всё, что споткнулось, — в журнал v0.3.
